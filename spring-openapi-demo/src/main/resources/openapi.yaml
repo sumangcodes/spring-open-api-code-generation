@@ -1,0 +1,38 @@
+openapi: 3.0.0
+info:
+  title: Pizza Ordering API
+  version: 1.0.0
+  description: Simple API to order and view pizzas.
+
+paths:
+  /pizzas:
+    get:
+      summary: Get all available pizzas
+      responses:
+        '200':
+          description: List of pizzas
+          content:
+            application/json:
+              example:
+                - name: "Margherita"
+                  price: 8.99
+                - name: "Pepperoni"
+                  price: 10.99
+
+  /order:
+    post:
+      summary: Place a new pizza order
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                pizzaName:
+                  type: string
+                quantity:
+                  type: integer
+      responses:
+        '201':
+          description: Order placed successfully
