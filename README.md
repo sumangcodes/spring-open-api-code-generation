@@ -1,0 +1,1 @@
+# spring-open-api-code-generation
